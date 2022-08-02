@@ -1,4 +1,4 @@
-  ![](https://velog.velcdn.com/images/chan9708/post/87cb07b7-048a-428e-a7de-362efee2bb22/image.jpg)
+  ![](https://velog.velcdn.com/images/chan9708/post/87cb07b7-048a-428e-a7de-362efee2bb22/image.jpg) 
 
 # 자료구조
 * **자료(데이터)에 효율적으로 접근하고 수정할 수 있도록 저장, 조직, 관리**하는 방법에 관한 이론.
