@@ -3,8 +3,6 @@
 
 # 스택
 
-![](https://velog.velcdn.com/images/chan9708/post/8163210b-386c-4330-bacd-7cffee2ea961/image.png)
-
 ## LIFO
 * **Last-In-First-Out**
 * 즉, 후입선출
