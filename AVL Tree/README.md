@@ -1,6 +1,6 @@
 ![](https://velog.velcdn.com/images/chan9708/post/ce54b6c0-6d41-47ae-b698-5701f1fd4be4/image.jpg)
 
-# 이전 이야기
+# 이어서
 
 >
 
