@@ -6,7 +6,7 @@ def chech_prime(n):
         return "NO"
     i = 2
     소수 = True
-    while (i**2) < n:
+    while (i**2) < n:  # 4 9 16 25 36 49 64 81
         if n % i == 0:
             소수 = False
             break

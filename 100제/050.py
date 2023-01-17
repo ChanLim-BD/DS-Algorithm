@@ -11,3 +11,13 @@ data = list(map(int, input().split()))
 n = len(data)
 
 bubble(n, data)
+
+'''
+ [47, 5, 65, 54, 23]
+  0   1  2   3   4
+  n = 5
+  0 1 2 3
+  4 3 2 1
+ 
+
+'''
