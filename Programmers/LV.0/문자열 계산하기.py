@@ -1,4 +1,4 @@
-def solution(my_string):
+def solution1(my_string):
     s = my_string.split()
     print(s)
     answer = int(s[0])
@@ -8,6 +8,10 @@ def solution(my_string):
         else:
             answer -= int(s[i+1])
     return answer
+
+
+def solution(my_string):
+    return eval(my_string)
 
 
 def main():

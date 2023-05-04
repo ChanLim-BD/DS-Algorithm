@@ -2,10 +2,10 @@ def solution(my_string):
     for i in my_string:
         if i.isalpha():
             my_string = my_string.replace(i, ' ')
-    print(my_string)
+    # print(my_string)    1 2  34
     my_string = my_string.split()
-    print(my_string)
-    print(list(map(int, my_string)))
+    # print(my_string) ['1', '2', '34']
+    # print(list(map(int, my_string))) [1, 2, 34]
 
     return sum(list(map(int, my_string)))
 

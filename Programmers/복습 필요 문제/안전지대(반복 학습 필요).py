@@ -11,14 +11,6 @@ def solution0(board):
     n = len(board)
     danger = set()
     for i, row in enumerate(board):
-        """       0  1  2  3  4    j
-            0    [0, 0, 0, 0, 0],
-            1    [0, 0, 0, 0, 0],
-            2    [0, 0, 0, 0, 0],
-            3    [0, 0, 1, 0, 0],
-            4    [0, 0, 0, 0, 0]
-            i
-        """
         for j, x in enumerate(row):
             if not x:
                 continue
@@ -38,7 +30,7 @@ def solution(board):
                 for x in range(i-1, i+2):
                     for y in range(j-1, j+2):
                         danger_array[x][y] = 1
-    danger_list = danger_array.reshape(1, -1).squeeze()  # 2차원 배열을 1차원 배열로
+    danger_list = danger_array.reshape(1, -1).squeeze() # 2차원 배열을 1차원 배열로
     print(danger_list)
     answer = Counter(danger_list)[0]
     # 결과 값 반환
@@ -78,13 +70,8 @@ def solution1(board):
 
 
 def main():
-    print(solution([
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0],
-        [0, 0, 1, 0, 0],
-        [0, 0, 0, 0, 0]
-    ]))
+    print(solution([[0, 0, 0, 0, 0], [0, 0, 0, 0, 0], [
+          0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 0, 0]]))
 
 
 if __name__ == '__main__':

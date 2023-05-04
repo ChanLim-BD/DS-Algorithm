@@ -5,3 +5,11 @@ def solution(my_string):
             answer.append(int(s))
     answer.sort()
     return answer
+
+
+def main():
+    print(solution("456234535"))
+
+
+if __name__ == '__main__':
+    main()

@@ -1,10 +1,10 @@
 def solution(common):
-    p, m = 0, 0
+    plus, multiple = 0, 0
     if common[1] - common[0] == common[2] - common[1]:
-        p = 1
+        plus = 1
     else:
-        m = 1
-    if p == 1:
+        multiple = 1
+    if plus == 1:
         answer = common.pop() + (common[1] - common[0])
     else:
         answer = common.pop() * (common[1] // common[0])

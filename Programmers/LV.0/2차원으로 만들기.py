@@ -1,7 +1,7 @@
 def solution(num_list, n):
     answer = []
-    for i in range(0, len(num_list), n):
-        answer.append(num_list[i:i+n])
+    for i in range(0, len(num_list), n):  # n 단위 씩 0 2 4 6 ---
+        answer.append(num_list[i:i+n])  # 0 2 | 2 4 | 4 6 |
     return answer
 
 

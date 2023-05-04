@@ -1,7 +1,8 @@
 import math
+# 조합 (Combination)
 
 
-def factorial(x):
+def factorial(x):  # 4! = 4 * 3 * 2 * 1
     val = 1
     for i in range(1, x+1):
         val = val * i

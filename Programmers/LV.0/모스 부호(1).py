@@ -8,15 +8,17 @@ morse = {
 
 
 def solution(letter):
-    code = list(letter.split(' '))
+    codes = list(letter.split(' '))
+    # ['....', '.', '.-..', '.-..', '---']
     answer = ""
-    for c in code:
-        answer += str(morse.get(c))
+    for code in codes:
+        answer += str(morse.get(code))
     return answer
 
 
 def main():
     print(solution(".... . .-.. .-.. ---"))
+    print(morse)
 
 
 if __name__ == '__main__':

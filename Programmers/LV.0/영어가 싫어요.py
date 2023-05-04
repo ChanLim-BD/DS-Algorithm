@@ -7,7 +7,7 @@ def solution(numbers):
 
 
 def main():
-    print(solution("onetwothreefourfivesixseveneightnine"))
+    print(solution("onetwothreefourfivesixseveneightninezero"))
 
 
 if __name__ == '__main__':

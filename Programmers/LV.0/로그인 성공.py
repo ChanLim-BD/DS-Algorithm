@@ -9,3 +9,12 @@ def solution(id_pw, db):
         else:
             answer.append("fail")
     return answer[0]
+
+
+def main():
+    print(solution(["meosseugi", "1234"], [["rardss", "123"],
+          ["yyoom", "1234"], ["meosseugi", "1234"]]))
+
+
+if __name__ == '__main__':
+    main()

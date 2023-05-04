@@ -34,10 +34,13 @@ def search_and_update1(now_pos, now_map, now_arr):
     now_x, now_y = now_pos
     if now_map[max(now_x-1, 0)][now_y] == 0:
         now_arr.append([max(now_x-1, 0), now_y])
+
     if now_map[now_x][max(now_y-1, 0)] == 0:
         now_arr.append([now_x, max(now_y-1, 0)])
+
     if now_map[min(now_x+1, h-1)][now_y] == 0:
         now_arr.append([min(now_x+1, h-1), now_y])
+
     if now_map[now_x][min(now_y+1, w-1)] == 0:
         now_arr.append([now_x, min(now_y+1, w-1)])
     return now_arr
@@ -50,15 +53,19 @@ def search_and_update2(now_pos, now_map, now_arr, distance):
     if now_map[max(now_x-1, 0)][now_y] == 0:
         now_arr.append([max(now_x-1, 0), now_y])
         distance[(max(now_x-1, 0), now_y)] = distance[tuple(now_pos)]+1
+
     if now_map[now_x][max(now_y-1, 0)] == 0:
         now_arr.append([now_x, max(now_y-1, 0)])
         distance[(now_x, max(now_y-1, 0))] = distance[tuple(now_pos)]+1
+
     if now_map[min(now_x+1, h-1)][now_y] == 0:
         now_arr.append([min(now_x+1, h-1), now_y])
         distance[(min(now_x+1, h-1), now_y)] = distance[tuple(now_pos)]+1
+
     if now_map[now_x][min(now_y+1, w-1)] == 0:
         now_arr.append([now_x, min(now_y+1, w-1)])
         distance[(now_x, min(now_y+1, w-1))] = distance[tuple(now_pos)]+1
+
     return now_arr, distance
 
 
