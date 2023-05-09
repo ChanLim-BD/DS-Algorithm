@@ -27,7 +27,7 @@ def solution(polynomial):
 
 
 def main():
-    print(solution("3x + 7 + x + 6"))
+    print(solution("3x + 7 + x + 6 + 1"))
 
 
 if __name__ == '__main__':
