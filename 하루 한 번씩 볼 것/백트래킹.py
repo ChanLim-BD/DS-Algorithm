@@ -31,4 +31,5 @@ def recur(num):
             chk[i] = False
             rs.pop()
 
+print(chk)
 recur(0)
