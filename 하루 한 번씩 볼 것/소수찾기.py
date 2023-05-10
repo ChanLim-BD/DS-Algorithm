@@ -17,15 +17,26 @@ def is_prime(num):
 def is_prime2(num):
     if num == 1:
         return False
-    for i in range(2, int(num**(0.5)) + 1):
+    for i in range(2, int(num**(0.5)) + 1):     # 연산 시간 최소화
         if num % i == 0:
             return False
     return True
 
+def is_prime3(n):
+    answer = []
+    for i in range(2, n+1):
+        count = 0
+        for j in range(2, i // 2+1):
+            if i % j == 0:
+                count += 1
+        if count == 0:
+            answer.append(i)
+    print(answer)
+
 
 def main():
     primes = []
-    for i in range(1, 7897):
+    for i in range(1, 100):
         if is_prime2(i) == True:
             primes.append(i)
     print(primes)
