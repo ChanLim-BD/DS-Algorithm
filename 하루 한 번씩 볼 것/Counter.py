@@ -6,4 +6,4 @@ c = Counter(letter)
 print(c)
 print()
 
-print(c.__dir__())
+print(c['d'])
