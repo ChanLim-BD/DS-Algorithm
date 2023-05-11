@@ -4,7 +4,6 @@ for i in range(2, int(num**(0.5)) + 1):
 이 라인 주목,
 """
 
-
 def is_prime(num):
     if num == 1:
         return False
@@ -17,7 +16,7 @@ def is_prime(num):
 def is_prime2(num):
     if num == 1:
         return False
-    for i in range(2, int(num**(0.5)) + 1):     # 연산 시간 최소화
+    for i in range(2, int(num**(0.5)) + 1):     # 연산 시간 최소화, 특정한 자연수의 약수를 찾을 때 가운데 약수(제곱근)까지만 확인
         if num % i == 0:
             return False
     return True

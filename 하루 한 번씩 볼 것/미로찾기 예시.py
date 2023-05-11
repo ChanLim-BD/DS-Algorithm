@@ -49,7 +49,6 @@ def search_and_update1(now_pos, now_map, now_arr):
 def search_and_update2(now_pos, now_map, now_arr, distance):
     h, w = len(now_map), len(now_map[0])
     now_x, now_y = now_pos
-    print(now_x, now_y)
     if now_map[max(now_x-1, 0)][now_y] == 0:
         now_arr.append([max(now_x-1, 0), now_y])
         distance[(max(now_x-1, 0), now_y)] = distance[tuple(now_pos)]+1

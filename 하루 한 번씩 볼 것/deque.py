@@ -1,5 +1,12 @@
 from collections import deque
 
+"""
+Queue를 구현할 때 주로 사용한다.
+append, popleft
+
+Stack은 그냥 리스트로
+"""
+
 dq = deque('donthateme')
 
 print(dq)
