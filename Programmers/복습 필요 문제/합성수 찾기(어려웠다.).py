@@ -6,7 +6,6 @@ def solution(n):
             if i % j == 0:
                 num.append(i)
         if num.count(i) >= 3:
-            print(num.count(i))
             ans += 1
     print(num)
     return ans
