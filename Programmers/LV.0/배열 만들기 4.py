@@ -7,7 +7,7 @@ def solution(arr):
     return stk
 
 def main():
-    print(solution([1,4,2,5,3]))
+    print(solution([1,4,2,5,3,6]))
 
 
 if __name__ == '__main__':
