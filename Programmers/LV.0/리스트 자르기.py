@@ -12,4 +12,4 @@ def solution(n, slicer, num_list):
     elif n == 4:
         for i in range(slicer[0], slicer[1] + 1, slicer[2]):
             answer.append(num_list[i])
-    return answer 
+    return answer  
