@@ -7,3 +7,10 @@ def solution(sizes):
         short_l.append(min(size))
     answer = max(long_l) * max(short_l)
     return answer
+
+def main():
+    print(solution([[60, 50], [30, 70], [60, 30], [80, 40]]))
+
+
+if __name__ == '__main__':
+    main()

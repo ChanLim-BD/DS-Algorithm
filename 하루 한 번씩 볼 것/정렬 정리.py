@@ -1,20 +1,31 @@
-def quickSort(A, p:int, r:int):
-	count = 0
-	if p < r:
-		q = partition(A, p, r)	 # 분할
-		quickSort(A, p, q-1)	 # 왼쪽 부분 리스트 정렬
-		quickSort(A, q+1, r)	 # 오른쪽 부분 리스트 정렬
-		
+# 선택 정렬
 
-def partition(A, p:int, r:int) -> int:
-	x = A[r]					# x: 기준 원소
-	i = p-1					# i: 1구역의 끝 지점
-	for j in range(p, r):	# j: 3구역의 시작 지점
-		if A[j] < x:
-			i += 1
-			A[i], A[j] = A[j], A[i]  # 교환
-	A[i+1], A[r] = A[r], A[i+1]	   # 기준 원소와 2구역 첫 원소 교환
-	return i+1
+array = [7, 5, 8, 9, 1, 4, 2, 6]
+
+for i in range(len(array)):
+	min_idx = i
+	for j in range(i + 1, len(array)):
+		if array[min_idx] > array[j]:
+			min_idx = j
+	array[i], array[min_idx] = array[min_idx], array[i]
+
+print(array)
+
+# 삽입 정렬
+
+array = [7, 5, 8, 9, 1, 4, 2, 6]
+
+for i in range(1, len(array)):
+	for j in range(i, 0, -1):
+		if array[j] < array[j - 1]:
+			array[j], array[j - 1] = array[j - 1], array[j]
+		else:
+			break
+
+print(array)
+
+
+# 퀵 정렬
 
 # ---
 
@@ -53,4 +64,19 @@ sol = quick_sort_p(array)
 # quick_sort(array, 0, len(array) - 1)
 print(sol)
 
-		
+
+# 계수 정렬
+
+array = [7, 5, 8, 9, 1, 4, 2, 6, 3, 4, 1, 2, 9, 7, 8, 4, 7, 2, 1]
+
+count = [0] * (max(array) + 1)
+
+for i in range(len(array)):
+	count[array[i]] += 1
+
+
+print(count)
+
+for i in range(len(count)):
+	for j in range(count[i]):
+		print(i, end=' ')

@@ -12,3 +12,17 @@ def countingSort(A):
 	return B
 
 # 코드 9-9
+
+array = [7, 5, 8, 9, 1, 4, 2, 6, 3, 4, 1, 2, 9, 7, 8, 4, 7, 2, 1]
+
+count = [0] * (max(array) + 1)
+
+for i in range(len(array)):
+	count[array[i]] += 1
+
+
+print(count)
+
+for i in range(len(count)):
+	for j in range(count[i]):
+		print(i, end=' ')
