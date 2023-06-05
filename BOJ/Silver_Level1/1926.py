@@ -36,7 +36,7 @@ def bfs(y, x):
         for k in range(4):
             ny = ey + dy[k]
             nx = ex + dx[k]
-            if 0<=ny<n and 0<=nx<m:
+            if 0 <= ny < n and 0 <= nx < m:
                 if map[ny][nx] == 1 and chk[ny][nx] == False:
                     rs += 1
                     chk[ny][nx] = True
