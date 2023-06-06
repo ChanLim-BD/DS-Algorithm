@@ -8,7 +8,7 @@ def solution(n, times):
     return a
 
 def is_ok(n, times, x):
-    return n <= sum(x//i for i in times)
+    return n <= sum(x // i for i in times)
 
 
 print(solution(6, [7, 10]))
