@@ -28,7 +28,6 @@ def is_ok(n, x):
     return True if x>n else False
 
 # 2) n보다 작은 최대의 자연수 찾기
-
 def solution(n):
     a,b = 0,1
     while is_ok(n, b):
