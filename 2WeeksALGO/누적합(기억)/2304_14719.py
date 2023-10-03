@@ -57,10 +57,10 @@ for b in range(maxWidth, 0, -1):
     h = max(h, graph[b])
     suffix[b] = suffix[b+1] + h
 
-print(graph)
-print(prefix)
-print(suffix)
-print(maxPoint)
+# print(graph)
+# print(prefix)
+# print(suffix)
+# print(maxPoint)
 
 #정답 합치기
 

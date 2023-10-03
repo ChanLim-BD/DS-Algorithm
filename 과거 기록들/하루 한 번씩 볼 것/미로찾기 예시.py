@@ -1,9 +1,9 @@
-def can_go(start, end, map_=None):
+def can_go(start, end, map_= None):
     arr = [start]
     while len(arr) != 0:
         # 1
-        now_position = arr.pop(0)
-        map_[now_position[0]][now_position[1]] = -1
+        now_position = arr.pop(0) # [0, 0]
+        map_[now_position[0]][now_position[1]] = -1 # 맵의 (0, 0) = -1 처리
 
         # 2                         (0, 0)
         arr = search_and_update1(now_position, map_, arr)
@@ -12,7 +12,7 @@ def can_go(start, end, map_=None):
     return False
 
 
-def get_distance(start, end, map_=None):
+def get_distance(start, end, map_= None):
     arr = [start]
     distance = {tuple(start): 0}
     while len(arr) != 0:
@@ -30,7 +30,7 @@ def get_distance(start, end, map_=None):
 
 
 def search_and_update1(now_pos, now_map, now_arr):
-    h, w = len(now_map), len(now_map[0])  # 6, 5
+    h, w = len(now_map), len(now_map[0])  # 6, 5 
     now_x, now_y = now_pos
     if now_map[max(now_x-1, 0)][now_y] == 0:
         now_arr.append([max(now_x-1, 0), now_y])
