@@ -1,9 +1,6 @@
 n = int(input())
 answer = 0
-words = []
-
-for _ in range(n):
-    words.append(input())
+words = [input() for _ in range(n)]
 
 for word in words:
     checker = list(''.join(set(word)))
@@ -17,3 +14,12 @@ for word in words:
         answer += 1
         
 print(answer)
+
+
+'''
+4
+aba
+abab
+abcabc
+a
+'''
