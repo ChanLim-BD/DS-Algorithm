@@ -18,3 +18,6 @@ print(c)                                # [12313432123456] | [123, 123, 444, 555
 
 d = [int(input()) for _ in range(5)]    # 123 enter 456 enter 146 enter 34342 enter 76 enter
 print(d)                                # [123, 456, 146, 34342, 76]
+
+graph = [[0] * 19 for _ in range(19)]
+graph = [list(map(int, input().split())) for _ in range(19)]
