@@ -6,9 +6,9 @@ def DFS(numbers, target, depth):
         else:
             return 0
     else:
-        answer += DFS(numbers, target, depth+1)
+        answer += DFS(numbers, target, depth + 1)
         numbers[depth] *= -1
-        answer += DFS(numbers, target, depth+1)
+        answer += DFS(numbers, target, depth + 1)
         return answer
 
 def solution1(numbers, target):
@@ -29,4 +29,4 @@ def solution2(numbers, target):         # [1,1,1,1,1], 3
             answer += 1
     return answer
 
-print(solution1([1,1,1,1,1], 3))
+print(solution1([4,2,6,3,1,3,4,3,2,4], 10))
