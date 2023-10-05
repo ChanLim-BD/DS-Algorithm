@@ -30,3 +30,5 @@ for i in range(1, len(food)):           # 순차적 출력
 answer += '0'
 for i in range(1, len(food))[::-1]:     # 역순 출력 
     answer += str(i) * (food[i] // 2)
+
+print(int("".join("1999")))             # 정수 1999
