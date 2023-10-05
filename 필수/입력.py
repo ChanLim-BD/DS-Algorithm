@@ -21,3 +21,12 @@ print(d)                                # [123, 456, 146, 34342, 76]
 
 graph = [[0] * 19 for _ in range(19)]
 graph = [list(map(int, input().split())) for _ in range(19)]
+
+food = [1, 3, 4, 6]
+answer = ''
+
+for i in range(1, len(food)):           # 순차적 출력
+    answer += str(i) * (food[i] // 2)
+answer += '0'
+for i in range(1, len(food))[::-1]:     # 역순 출력 
+    answer += str(i) * (food[i] // 2)
