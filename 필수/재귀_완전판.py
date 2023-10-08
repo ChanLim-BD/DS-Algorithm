@@ -22,10 +22,10 @@ TopDown(10)
 
 print()
 
-def BottomUp(n):
-    if n != 1 :
-        BottomUp(n-1) 
-    print(n, end=' ')
+def BottomUp(x):
+    if x != 0 :
+        BottomUp(x-1) 
+    print(x, end=' ')
 
 BottomUp(10)
 
