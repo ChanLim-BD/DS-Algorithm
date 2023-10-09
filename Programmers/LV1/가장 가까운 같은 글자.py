@@ -7,4 +7,5 @@ def solution(s):
         else:
             answer.append(i - tmp[s[i]])
         tmp[s[i]] = i
+        
     return answer

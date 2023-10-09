@@ -116,13 +116,32 @@
 
 # recur1(0)
 
-def div(n):
-    tmp = 0
-    for i in range(1, int(n ** 0.5) + 1):
-        if n % i == 0:
-            tmp += 1
-            if i ** 2 != n:
-                tmp += 1
-    return tmp
+# def div(n):
+#     tmp = 0
+#     for i in range(1, int(n ** 0.5) + 1):
+#         if n % i == 0:
+#             tmp += 1
+#             if i ** 2 != n:
+#                 tmp += 1
+#     return tmp
 
-print(div(9))
+# print(div(9))
+
+
+
+# def sol(s):
+#     answer = []
+#     tmp = {}
+#     for i in range(len(s)):
+#         if s[i] not in tmp:
+#             answer.append(-1)
+#         else:
+#             answer.append(i - tmp[s[i]])
+#         tmp[s[i]] = i
+#     print(tmp)
+#     return answer
+
+# print(sol('sdskdjsjkdhjsadjsk'))
+
+lst = ['azaaaaaaaa', 'ahaaaaaaaa', 'fbffffffffff', 'ddddddddddd']
+print(sorted(lst, key=lambda x:x[1]))
