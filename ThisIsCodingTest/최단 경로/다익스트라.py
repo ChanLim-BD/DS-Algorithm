@@ -1,11 +1,15 @@
 import heapq
 import sys
 input = sys.stdin.readline
-INF = int(1e9)
+INF = int(1e9)  # 10억 설정
 
-N, M = map(int, input().split())
+# 노드의 개수, 간선의 개수
+N, M = map(int, input().split()) 
+# 시작 노드 번호
 start = int(input())
+# 각 노드에 연결되어 있는 노드에 대한 정보를 담는 리스트
 graph = [[] for _ in range(N + 1)]
+# 최단 거리 테이블
 distance = [INF] * (N + 1)
 
 for _ in range(M):

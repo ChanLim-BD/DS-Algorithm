@@ -19,16 +19,24 @@ print(c)                                # [12313432123456] | [123, 123, 444, 555
 d = [int(input()) for _ in range(5)]    # 123 enter 456 enter 146 enter 34342 enter 76 enter
 print(d)                                # [123, 456, 146, 34342, 76]
 
-graph = [[0] * 19 for _ in range(19)]
-graph = [list(map(int, input().split())) for _ in range(19)]
+graph1 = [[0] * 19 for _ in range(19)]
+print(graph1)
+graph2 = [list(map(int, input().split())) for _ in range(19)]
+print(graph2)
+
 
 food = [1, 3, 4, 6]
 answer = ''
 
 for i in range(1, len(food)):           # 순차적 출력
     answer += str(i) * (food[i] // 2)
+
+print(answer)
+
 answer += '0'
 for i in range(1, len(food))[::-1]:     # 역순 출력 
     answer += str(i) * (food[i] // 2)
+
+print(answer)
 
 print(int("".join("1999")))             # 정수 1999
