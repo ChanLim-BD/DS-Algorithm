@@ -10,8 +10,7 @@ print(stuff)
 #냅색 문제 풀이
 for i in range(1, N + 1):       # 1 2 3 4
     for j in range(1, K + 1):   # 1 2 3 4 5 6 7
-        weight = stuff[i][0] 
-        value = stuff[i][1]
+        weight, value = stuff[i]
        
         if j < weight:
             knapsack[i][j] = knapsack[i - 1][j] # weight보다 작으면 위의 값을 그대로 가져온다

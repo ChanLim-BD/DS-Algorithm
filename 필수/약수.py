@@ -26,3 +26,5 @@ def solution(number, limit, power):
         else:
             answer += div_count(i)
     return answer
+
+print(solution(10, 20, 2))

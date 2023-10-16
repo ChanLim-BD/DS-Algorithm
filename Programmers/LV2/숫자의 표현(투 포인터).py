@@ -3,7 +3,7 @@ def solution(n):
     interval_sum = 0
     nature = []
     
-    for i in range(1, n+1):
+    for i in range(1, n+1): # 1 ~ n
         nature.append(i)
     
     for start in range(len(nature)):
