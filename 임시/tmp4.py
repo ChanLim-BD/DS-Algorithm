@@ -384,34 +384,474 @@
 
 #     print(answer)
 
-import sys
-sys.setrecursionlimit(10**6)
-input = sys.stdin.readline
+# import sys
+# sys.setrecursionlimit(10**6)
+# input = sys.stdin.readline
 
-dy = [0, 1, 0, -1, 1, 1, -1, -1]
-dx = [1, 0, -1, 0, 1, -1, 1, -1]
+# dy = [0, 1, 0, -1, 1, 1, -1, -1]
+# dx = [1, 0, -1, 0, 1, -1, 1, -1]
 
-def dfs(y, x):
-    global graph
-    graph[y][x] = 0
-    for i in range(len(dy)):
-        ny = y + dy[i]
-        nx = x + dx[i]
-        if 0 <= ny < h and 0 <= nx < w and graph[ny][nx] == 1:
-            graph[ny][nx] = 0
-            dfs(ny, nx)
+# def dfs(y, x):
+#     global graph
+#     graph[y][x] = 0
+#     for i in range(len(dy)):
+#         ny = y + dy[i]
+#         nx = x + dx[i]
+#         if 0 <= ny < h and 0 <= nx < w and graph[ny][nx] == 1:
+#             graph[ny][nx] = 0
+#             dfs(ny, nx)
 
-while True:
-    answer = 0
-    w, h = map(int, input().split())
-    if w == 0 and h == 0:
-        break
+# while True:
+#     answer = 0
+#     w, h = map(int, input().split())
+#     if w == 0 and h == 0:
+#         break
 
-    graph = [list(map(int, input().split())) for _ in range(h)]
+#     graph = [list(map(int, input().split())) for _ in range(h)]
 
-    for i in range(h):
-        for j in range(w):
-            if graph[i][j] == 1:
-                dfs(i, j)
-                answer += 1
-    print(answer)
+#     for i in range(h):
+#         for j in range(w):
+#             if graph[i][j] == 1:
+#                 dfs(i, j)
+#                 answer += 1
+#     print(answer)
+
+
+# import sys
+# sys.setrecursionlimit(10**6)
+# input = sys.stdin.readline
+
+# N = int(input())
+# board = [list(map(int, input().split())) for _ in range(N)]
+# check = [[False] * N for _ in range(N)]
+
+# dy = [1, 0]
+# dx = [0, 1]
+
+# def dfs(y, x):
+#     check[y][x] = True
+#     if board[y][x] == -1:
+#         return
+#     for i in range(2):
+#         ny = y + board[y][x] * dy[i]
+#         nx = x + board[y][x] * dx[i]
+#         if 0 <= ny < N and 0 <= nx < N and check[ny][nx] == False:
+#             check[ny][nx] = True
+#             dfs(ny, nx)
+
+# dfs(0, 0)
+
+# if check[-1][-1] == True:
+#     print("HaruHaru")
+# else:
+#     print("Hing")
+# import sys
+# from collections import deque
+# sys.setrecursionlimit(10 ** 6)
+# input = sys.stdin.readline
+
+# n = int(input())
+# m = int(input())
+# graph = [[] * (n + 1) for _ in range(n + 1)]
+# visited = [False] * (n + 1)
+
+# for _ in range(m):
+#     a, b = map(int, input().split())
+#     graph[a].append(b)
+#     graph[b].append(a)
+
+# answer = 0 
+
+# def bfs(x):
+#     global graph, visited, answer
+#     q = deque(graph[x])
+#     print(q)
+#     visited[x] = True
+#     answer += 1 
+
+#     while q:
+#         for i in graph[q.pop()]:
+#             if visited[i] == False:
+#                 visited[i] = True
+#                 q.append(i)
+#                 answer += 1
+# bfs(1)
+
+# print(answer - 1)
+
+# board = [[0,0,0,0,0,0],
+#          [0,0,0,0,0,0],
+#          [0,0,0,0,0,0],
+#          [0,0,0,0,1,0],
+#          [0,0,0,0,0,0],]
+
+# count = sum(b.count(0) for b in board)
+
+# print(count)
+
+# import sys
+# from collections import deque
+# input = sys.stdin.readline
+
+# n, k = map(int, input().split())
+# board = []
+# locate = []
+
+# for i in range(n):
+#     board.append(list(map(int, input().split())))
+#     for j in range(n):
+#         if board[i][j] != 0:
+#             locate.append((board[i][j], 0, i, j))
+
+# locate.sort()
+# q = deque(locate) # [(1, 0, 0, 0), (2, 0, 0, 2), (3, 0, 2, 0)]
+
+# target_s, target_x, target_y = map(int, input().split())
+
+# dx = [0, 1, 0, -1]
+# dy = [1, 0, -1, 0]
+
+# while q:
+#     virus, s, x, y = q.popleft()
+#     if s == target_s:
+#         break
+#     for i in range(4):
+#         nx = x + dx[i]
+#         ny = y + dy[i]
+#         if 0 <= nx < n and 0 <= ny < n:
+#             if board[nx][ny] == 0:
+#                 board[nx][ny] = virus
+#                 q.append((virus, s+1, nx, ny))
+
+# print(board[target_x-1][target_y-1])
+
+# import sys
+# input = sys.stdin.readline
+
+# N, K = map(int, input().split())
+# stuff = [[0, 0]]
+# dp = [[0] * (K + 1) for _ in range(N + 1)]
+
+# for _ in range(N):
+#     stuff.append(list(map(int, input().split())))
+
+# for i in range(1, N + 1):
+#     for j in range(1, K + 1):
+#         weight, value = stuff[i]
+
+#         if j < weight:
+#             dp[i][j] = dp[i - 1][j]
+#         else:
+#             dp[i][j] = max(value + dp[i - 1][j - weight], dp[i - 1][j])
+
+# print(dp[N][K])
+
+# a1, h1 = map(int, input().split())
+# a2, h2 = map(int, input().split())
+
+# a, b = h1//a2 + (1 if h1%a2 else 0), h2//a1 + (1 if h2%a1 else 0)
+
+# if a == b:
+#     print("DRAW")
+# elif a > b:
+#     print("PLAYER A")
+# else:
+#     print("PLAYER B")
+
+# n, m = map(int, input().split())
+# rs = []
+# chk = [False] * (n + 1)
+
+
+# def func(num):
+#     if num == m:
+#         print(' '.join(map(str, rs)))
+#         return
+#     for i in range(1, n + 1):
+#         if chk[i] == False:
+#             chk[i] = True
+#             rs.append(i)
+#             func(num + 1)
+#             chk[i] = False
+#             rs.pop()
+
+# func(0)
+
+# n = int(input())
+# m = int(input())
+# graph = [[] * (n + 1) for _ in range(n + 1)]
+# visited = [False] * (n + 1)
+
+# for _ in range(m):
+#     a, b = map(int, input().split())
+#     graph[a].append(b)
+#     graph[b].append(a)
+
+# answer = 0 
+
+# def dfs(graph, visited, answer ,x):
+#     visited[x] = True
+#     answer += 1
+
+#     for i in graph[x]:
+#         if not visited[i]:
+#             dfs(i)
+
+# dfs(graph, visited, answer, 4)
+# print(visited)
+# print(answer - 1)
+
+# def getSpamEmails(subjects, spam_words):
+#     answer = []
+#     for subject in subjects:
+#         check = 0
+#         words = list(subject.split())
+        
+#         for sp in spam_words:
+#             for w in words:
+#                 if sp.lower() == w.lower():
+#                     check += 1
+        
+#         if check >= 2:
+#             answer.append('spam')
+#         else:
+#             answer.append('not_spam')
+
+#     return answer
+
+# print(getSpamEmails(
+#     ['Let it go', 'The right thing to do'], ['to', 'do', 'right', 'go', 'let']))
+
+# for i in []:
+#     print("dd")
+
+# things = set(i for i in range(1 , 11))
+# arr = [1,3,8]
+# can = sorted(list(things - set(arr)))
+
+# tmp, cnt = 0, 0
+# for i in can:
+#     tmp += i
+#     if tmp > 10:
+#         break
+#     cnt += 1
+
+# print(tmp, cnt)
+
+# def max_t(transaction):
+#     transaction.sort(reverse=True)
+#     print(transaction)
+#     current = 0
+#     count = 0
+    
+#     for t in transaction:
+#         current += t
+#         if current < 0:
+#             break
+#         count += 1
+    
+#     print(count)
+
+# max_t([3,2,-5,-6,-1,4])
+
+# import sys
+# sys.setrecursionlimit(10 ** 8)
+# input = sys.stdin.readline
+
+# dy = [0, 1, 0, -1]
+# dx = [1, 0, -1, 0]
+
+# def recur(y, x):
+
+#     if dp[y][x] != 0:
+#         return dp[y][x]
+
+#     for i in range(4):
+#         ny, nx = y + dy[i], x + dx[i]
+#         if 0 <= ny < n and 0 <= nx < n:
+#             if graph[y][x] < graph[ny][nx]:
+#                 dp[y][x] = max(dp[y][x], recur(ny, nx) + 1)
+
+#     return dp[y][x]
+
+# n = int(input())
+# graph = [list(map(int, input().split())) for _ in range(n)]
+# dp = [[0 for _ in range(n)] for _ in range(n)]
+
+# for y in range(n):
+#     for x in range(n):
+#         recur(y, x)
+
+# print(max(map(max, dp)) + 1)
+
+
+# import sys
+# sys.setrecursionlimit(10**6)
+# input = sys.stdin.readline
+
+# def recur(idx):
+#     if idx == n-1:
+#         return 0 
+#     if idx > n-1:
+#         return -99999
+#     if dp[idx] != 0:
+#         return dp[idx]
+
+#     dp[idx] = max(recur(idx + interview[idx][0]) + interview[idx][1], recur(idx + 1))
+    
+#     return dp[idx]
+
+# n = int(input())
+# interview = [list(map(int, input().split())) for _ in range(n)]
+# dp = [0 for _ in range(n + 1)]
+
+# print(recur(0))
+
+# dp2 = [0 for _ in range(n + 1)]
+
+# for idx in range(n + 1)[::-1]:
+#     if idx + interview[idx][0] > n:
+#         dp[idx] = dp[idx + 1]
+#     else:
+#         dp[idx] = max(dp[idx + interview[idx][0]] + interview[idx][1], dp[idx+1])
+
+# def recur1(idx, weight):
+#     if weight > b:
+#         return -99999
+#     if idx == n:
+#         return 0
+#     if dp[idx][weight] != -1:
+#         return dp[idx][weight]
+
+#     dp[idx][weight] = max(recur1(idx + 1, weight + items[idx][0])+ items[idx][1], recur1(idx + 1, weight))
+
+#     return dp[idx][weight]
+
+
+# n, b = map(int, input().split())
+# items = [list(map(int, input().split())) for _ in range(n)]
+# dp = [[-1 for _ in range(100_001)] for _ in range(n)]
+
+# print(recur1(0, 0))
+
+
+
+
+# answer_used.sort()
+
+# if answer_used:
+#     print(answer)
+#     print(*answer_used)
+# else:
+#     print(-1)
+
+
+
+# def recur(idx, ssin, sson, use):
+#     global answer
+
+#     if idx == n:
+#         if use == 0:
+#             return
+#         result = abs(ssin - sson)
+#         answer = min(answer, result)
+#         return
+    
+#     # 재료를 사용한다면,
+#     recur(idx + 1, ssin * ingre[idx][0], sson + ingre[idx][1], use + 1)
+#     # 재료를 사용하지 않았다면,
+#     recur(idx + 1, ssin, sson, use)
+
+# n = int(input())
+# ingre = [list(map(int, input().split())) for _ in range(n)]
+
+# answer = 9999999999999
+
+# recur(0, 1, 0, 0)
+# print(answer)
+
+
+
+# def recur(idx, price):
+
+#     if idx == n - 1:
+#         answer = max(answer, price)
+
+#     if idx > n - 1:
+#         return
+    
+#     recur(idx + interview[idx][0], price + interview[idx][1])
+#     recur(idx + 1, price)
+
+# n = int(input())
+# interview = [list(map(int, input().split())) for _ in range(n)]
+# dp = [0] * (n + 1)
+
+# import sys
+# from collections import deque
+# sys.setrecursionlimit(10 ** 6)
+# input = sys.stdin.readline
+
+# n = int(input())
+# m = int(input())
+
+# graph = [[] for _ in range(n + 1)]
+
+# for _ in range(m):
+#     a, b = map(int, input().split())
+#     graph[a].append(b)
+#     graph[b].append(a)
+
+# visited = [False] * (n + 1)
+
+# q = deque()
+
+# q.append(1)
+
+# while q:
+#     node = q.popleft()
+#     visited[node] = True
+
+#     for nxt in graph[node]:
+#         if visited[nxt] == True:
+#             continue
+#         q.append(nxt)
+
+# print(visited)
+
+# import sys
+# sys.setrecursionlimit(10**6)
+# input = sys.stdin.readline
+
+# def recur(idx):
+#     if idx == n-1:
+#         return 0 
+#     if idx > n-1:
+#         return -99999
+#     if dp[idx] != 0:
+#         return dp[idx]
+
+#     dp[idx] = max(recur(idx + interview[idx][0]) + interview[idx][1], recur(idx + 1))
+    
+#     return dp[idx]
+
+# n = int(input())
+# interview = [list(map(int, input().split())) for _ in range(n)]
+# dp = [0 for _ in range(n + 1)]
+
+# print(recur(0))
+
+# dp2 = [0 for _ in range(n + 1)]
+
+# for idx in range(n + 1)[::-1]:
+#     if idx + interview[idx][0] > n:
+#         dp[idx] = dp[idx + 1]
+#     else:
+#         dp[idx] = max(dp[idx + interview[idx][0]] + interview[idx][1], dp[idx+1])
+
+import heapq
+
+heap_items = [100, 15, 30, 50, 40, 10, 40]
+heapq.heapify(heap_items)
+
+print(heap_items)

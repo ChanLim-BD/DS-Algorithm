@@ -4,7 +4,7 @@ trans = 1
 cnt = 1
 y, x = 0, -1
 
-sel = False
+sel = True
 
 if sel:
     while N > 0:

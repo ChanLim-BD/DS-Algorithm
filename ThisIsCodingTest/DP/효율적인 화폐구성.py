@@ -1,7 +1,5 @@
 N, M = map(int, input().split())
-lst = []
-for _ in range(N):
-    lst.append(int(input()))
+lst = [list(map(int, input().split())) for _ in range(N)]
 
 dp = [10001] * (M + 1)
 

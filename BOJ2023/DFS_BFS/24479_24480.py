@@ -1,5 +1,6 @@
 import sys
-sys.setrecursionlimit(10**7)
+from collections import deque
+sys.setrecursionlimit(10 ** 6)
 input = sys.stdin.readline
 
 N, M, R = map(int, input().split())
@@ -36,16 +37,13 @@ def dfs(t):
             cnt += 1
             dfs(i)
 
-import sys
-sys.setrecursionlimit(150000)
-
-N, M, R = map(int, sys.stdin.readline().split())
+N, M, R = map(int, input().split())
 line = [[] for _ in range(N+1)]
 visited = [0]*(N+1)  # 저장값
 cnt = 1
 
 for _ in range(M):
-    a, b = map(int, sys.stdin.readline().split())
+    a, b = map(int, input().split())
     line[a].append(b)  # 양 방향 간선
     line[b].append(a)  # 양 방향 간선
 
@@ -57,20 +55,6 @@ for i in range(1, N+1):
 
 #########################
 
-import sys
-sys.setrecursionlimit(10**7)
-input = sys.stdin.readline
-
-N, M, R = map(int, input().split())
-line = [[] for _ in range(N+1)]
-visited = [0] * (N+1)  # 저장값
-cnt = 1
-
-for _ in range(M):
-    a, b = map(int, input().split())
-    line[a].append(b)  # 양 방향 간선
-    line[b].append(a)  # 양 방향 간선
-
 def dfs(t):
     global cnt
     visited[t] = cnt
@@ -79,6 +63,16 @@ def dfs(t):
         if visited[i] == 0:
             cnt += 1
             dfs(i)
+
+N, M, R = map(int, input().split())
+line = [[] for _ in range(N+1)]
+visited = [0] * (N+1)  # 저장값
+cnt = 1           
+
+for _ in range(M):
+    a, b = map(int, input().split())
+    line[a].append(b)  # 양 방향 간선
+    line[b].append(a)  # 양 방향 간선
 
 dfs(R)
 

@@ -13,9 +13,11 @@
 #     return answer
 
 def str_sort(strings, n):
-    strings.sort() 
-    return sorted(strings, key=lambda x:x[n])
-
+    strings.sort()
+    print(strings)
+    sorted(strings, key=lambda x:x[n])
+    print(strings)
+    return strings
 
 print(str_sort(["abce", "abcd", "cdx"], 2))
 

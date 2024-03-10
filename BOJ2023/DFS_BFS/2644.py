@@ -15,8 +15,6 @@ for _ in range(m):
     graph[y].append(x)
     graph[x].append(y)
 
-print(graph)
-
 def dfs(t):
     visited[t] = 1
     for i in graph[t]:
@@ -25,6 +23,8 @@ def dfs(t):
             dfs(i)
 
 dfs(target[0])
+
+print(result)
 
 if result[target[1]] > 0:
     print(result[target[1]])
